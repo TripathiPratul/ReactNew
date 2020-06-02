@@ -1,6 +1,6 @@
 ## Created App using create-react-app
 
-npx create-react-app lab1-hello-world
+### `npx create-react-app lab1-hello-world`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

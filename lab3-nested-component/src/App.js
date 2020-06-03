@@ -16,6 +16,8 @@ class App extends Component {
       persons: [],
       searchInupt: ''
     };
+
+  //  this.handleChangeEvent = this.handleChangeEvent.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +28,20 @@ class App extends Component {
       }))
   }
 
+  // /**
+  //  * NOTE: For every class method you have to bind 'this' in constructor.
+  //  * Alternative is Arrow function.
+  //  * @param  e 
+  //  */
+  // handleChangeEvent(e){
+  //   this.setState({searchInupt: e.target.value});
+  // }
+
+  handleChangeEvent = (e) => {
+    this.setState({searchInupt: e.target.value});
+  }
+
+
   render() {
     const { persons, searchInupt } = this.state;
     const filteredPersons = persons.filter(person =>{
@@ -33,7 +49,7 @@ class App extends Component {
     })
     return ( 
       <div className = "App" >
-        <SeacrhBox handleChange= { e=>  this.setState({ searchInupt: e.target.value })} />
+        <SeacrhBox handleChange= { this.handleChangeEvent } />
         <CardList users={filteredPersons} />
       </div>
     );

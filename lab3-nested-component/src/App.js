@@ -6,6 +6,8 @@ import {
 } from './components/card-list.component';
 import './App.css';
 
+import { SeacrhBox } from './components/search-box.component';
+
 class App extends Component {
   constructor() {
     super();
@@ -31,7 +33,7 @@ class App extends Component {
     })
     return ( 
       <div className = "App" >
-        <input type="search" onChange={ e=>  this.setState({ searchInupt: e.target.value })} />
+        <SeacrhBox handleChange= { e=>  this.setState({ searchInupt: e.target.value })} />
         <CardList users={filteredPersons} />
       </div>
     );

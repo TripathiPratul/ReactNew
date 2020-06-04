@@ -31,14 +31,14 @@ export class CardContainer extends React.Component{
 					imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
 					size: 'large',
 					id: 4,
-					linkUrl: 'shop/womens'
+					linkUrl: 'shop/women'
 				},
 				{
 					title: 'mens',
 					imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
 					size: 'large',
 					id: 5,
-					linkUrl: 'shop/mens'
+					linkUrl: 'shop/men'
 				}
 			]	
 		}
@@ -47,8 +47,8 @@ export class CardContainer extends React.Component{
   render(){
     return <div className='card-container'>
 			{
-				this.state.cards.map(({title, imageUrl, size, id})=>
-					<Card  key={ id } title={ title } imageUrl={ imageUrl } size={ size }/>
+				this.state.cards.map(({ id, ...restProps})=>
+					<Card  key={ id } {...restProps }/>
 				)
 			}
       	

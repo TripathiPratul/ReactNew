@@ -1,4 +1,5 @@
 import React from 'react';
+import ShopItem from './shop-item.component';
 
 import './shop-item-collection.styles.scss';
 
@@ -7,9 +8,8 @@ const ShopItemCollection = ( { title, items }) => (
             <div className="title"> { title }</div>
             <div className="item-card">
                 {
-                    items.map((item) =>(
-                        <div key={item.id} > {item.name}
-                        </div>
+                    items.map(({id, ...otherProps}) =>(
+                        <ShopItem key={id} {...otherProps} />
                     ))
                 }
             </div>
